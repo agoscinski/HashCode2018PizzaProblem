@@ -21,7 +21,8 @@ def visualize_pizza(name):
     plt.show()
     
 def load_solution_data(name):
-    return np.loadtxt(name,dtype=np.int, skiprows=1)    
+    # assumes >1 solutions
+    return np.loadtxt(name,dtype=np.int, skiprows=1) 
 
 def visualize_solution(name):
     pizza = load_pizza_data(name+'.in')
@@ -45,8 +46,7 @@ def visualize_solution(name):
                 right_lower_corner_x,          # width
                 right_lower_corner_y,          # height
                 fill=False,
-                hatch='\\',
-                linewidth=3
+                hatch='\\'
             )
         )
     plt.show()
