@@ -1,3 +1,4 @@
+import sys
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
@@ -50,3 +51,8 @@ def visualize_solution(name):
             )
         )
     plt.show()
+
+if __name__ == '__main__':
+    if len(sys.argv) < 2:
+        sys.exit('Syntax: %s <filename>' % sys.argv[0])
+    visualize_solution(sys.argv[1])
